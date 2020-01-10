@@ -19,8 +19,8 @@ namespace WeTube.Models
         public DateTime RegistrationDate { get; set; }
         public Enums.Role Role { get; set; }
 
-        public Guid AppUserId { get; set; }
-        [ForeignKey("AppUserId")]
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
         public bool IsBlocked { get; set; }

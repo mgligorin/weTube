@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -24,7 +25,12 @@ namespace WeTube.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        public DbSet<AppUser> AppUser { get; set; }
+        public DbSet<Video> Video { get; set; }
+        public DbSet<Comment> Comment { get; set; }
+        public DbSet<LikeRatio> LikeRatio { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
