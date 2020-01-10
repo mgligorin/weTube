@@ -48,6 +48,18 @@ namespace WeTube.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        [Display(Name = "First name (optional)")]
+        public string FirstName { get; set; }
+
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        [Display(Name = "Last name (optional)")]
+        public string LastName { get; set; }
+
+        [StringLength(200, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Description (optional)")]
+        public string Description { get; set; }
     }
 
     public class RegisterExternalBindingModel
